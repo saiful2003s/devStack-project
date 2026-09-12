@@ -1,5 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { FaStar } from "react-icons/fa";
+import type { Itechnology } from '../../types/technologyType';
 
 const badgeColors: Record<string, string> = {
     Popular: "bg-purple-100 text-purple-600",
@@ -12,7 +13,11 @@ const badgeColors: Record<string, string> = {
     Design: "bg-pink-100 text-pink-600",
 };
 
-const AllTechnologies = ({ technologies }) => {
+interface AllTechnologiesProps {
+    technologies: Itechnology[];
+}
+
+const AllTechnologies = ({ technologies }: AllTechnologiesProps) => {
     console.log(technologies, 'technologies from all technologies');
     return (
         <div className='grid grid-cols-3 gap-4'>
