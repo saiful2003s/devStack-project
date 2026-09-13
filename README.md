@@ -16,6 +16,8 @@ DevStack is a simple and interactive web application that allows users to explor
 * React Toastify
 * JSON
 * React Hooks (`use`, `useState`, `Suspense`)
+* DaisyUI
+* Vite
 
 ---
 
