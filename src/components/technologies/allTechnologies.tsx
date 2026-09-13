@@ -1,7 +1,7 @@
 // import React from 'react';
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from '../../types/technologyType';
-import Stack from "./stack";
+// import Stack from "./stack";
 
 const badgeColors: Record<string, string> = {
     Popular: "bg-purple-100 text-purple-600",
@@ -55,7 +55,7 @@ const AllTechnologies = ({ technologies, addToStack, stack }: AllTechnologiesPro
                                 <div className="mt-6">
                                     <button onClick={() => addToStack(technology)}
                                         disabled={isAdded}
-                                        className= {`btn ${isAdded ? 'bg-[#f1f5f9c1] text-[#475569]' : 'bg-[#0A0F1D] text-[#FFFFFF]'}  btn-block rounded-md`} > {isAdded ? 'Added' : 'Add to Stack'}</button>
+                                        className= {`btn ${isAdded ? 'bg-[#f1f5f9c1] text-[#475569]' : 'bg-[#0A0F1D] text-[#FFFFFF]'}  btn-block rounded-md`} > {isAdded ? '✓ Added to Stack' : 'Add to Stack'}</button>
                                 </div>
                             </div>
                         </div>

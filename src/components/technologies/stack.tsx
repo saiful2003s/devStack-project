@@ -1,12 +1,15 @@
 // import React from 'react';
 import type { Itechnology } from "../../types/technologyType";
-import { CiSquareRemove } from "react-icons/ci";
+import { RxCross2 } from "react-icons/rx";
 
 interface stackProps {
     stack: Itechnology[]
+    handleRemoveItem: (id: Itechnology['id']) => void
+    handleRemoveAll: () => void
 }
 
-const Stack = ({ stack }: stackProps) => {
+
+const Stack = ({ stack, handleRemoveItem, handleRemoveAll }: stackProps) => {
     return (
         <div className="card card-border bg-base-100">
             <div className="card-body">
@@ -45,16 +48,16 @@ const Stack = ({ stack }: stackProps) => {
                                         </div>
                                     </div>
 
-                                    <div><button className=""><CiSquareRemove className="text-2xl" /></button></div>
+                                    <div><button onClick={() => handleRemoveItem(technology.id)}><RxCross2 className="text-2xl" /></button></div>
 
-                                    
+
 
                                 </div>
                             </div>
                         ))}
 
                         <div className="card-actions justify-end">
-                            <button className="btn btn-border w-full mt-3 text-red-500 font-bold text-[15px]">
+                            <button onClick={handleRemoveAll} className="btn btn-border w-full mt-3 text-red-500 font-bold text-[15px]">
                                 Remove All
                             </button>
                         </div>

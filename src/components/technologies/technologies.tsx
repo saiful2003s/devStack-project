@@ -12,11 +12,22 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
     const technologies = use(technologiesPromise)
     // console.log(technologies);
 
-    const [stack, setStack ] = useState<Itechnology[]>([])
+    const [stack, setStack] = useState<Itechnology[]>([])
 
     const addToStack = (technology: Itechnology) => {
         setStack([...stack, technology])
 
+    }
+
+    const handleRemoveItem = (id: Itechnology['id']) => {
+        setStack((currentStack) => currentStack.filter(
+            (technology) => technology.id !== id
+        ))
+
+    }
+
+    const handleRemoveAll = () => {
+        setStack([])
     }
 
 
@@ -33,10 +44,9 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
                 <div className='grid grid-cols-4 gap-5'>
                     <div className='col-span-3'>
                         <AllTechnologies technologies={technologies} addToStack={addToStack} stack={stack} />
-
                     </div>
                     <div>
-                        <Stack stack={stack} />
+                        <Stack stack={stack} handleRemoveItem={handleRemoveItem} handleRemoveAll={handleRemoveAll} />
                     </div>
                 </div>
 
