@@ -13,7 +13,7 @@ const Banner = () => {
                     <div className='flex items-center gap-3 justify-center lg:justify-start'>
                         <button className="btn bg-linear-to-r from-[#F97316] to-[#EC4899] text-white ">Explore Technologies</button>
                         <button className="btn btn-outline">Learn More</button>
-                        
+
                     </div>
                 </div>
                 <div className='flex justify-center'>
