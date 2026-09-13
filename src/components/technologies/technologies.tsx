@@ -2,6 +2,7 @@ import { use, useState } from 'react';
 import type { Itechnology } from '../../types/technologyType';
 import AllTechnologies from './allTechnologies';
 import Stack from './stack';
+import { toast } from "react-toastify";
 
 
 interface TechnologiesProps {
@@ -15,19 +16,37 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
     const [stack, setStack] = useState<Itechnology[]>([])
 
     const addToStack = (technology: Itechnology) => {
+        const alreadyAdded = stack.some(
+            (item) => item.id === technology.id
+        )
+
+        if (alreadyAdded === true) {
+            return toast.warning(`${technology.name} is already added!`)
+        }
         setStack([...stack, technology])
+
+        toast.success(`${technology.name} is added successfully`)
 
     }
 
     const handleRemoveItem = (id: Itechnology['id']) => {
+
+        const removedItem = stack.find(
+            (technology) => technology.id === id
+        )
+
         setStack((currentStack) => currentStack.filter(
             (technology) => technology.id !== id
         ))
+
+        toast.error(`${removedItem?.name} has been removed`)
 
     }
 
     const handleRemoveAll = () => {
         setStack([])
+
+        toast.error("All item removed from stack");
     }
 
 

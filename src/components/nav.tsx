@@ -11,11 +11,11 @@ const Nav = () => {
                 </div>
 
                 <ul className='flex gap-7 font-semibold items-center'>
-                    <li className="text-[#DB2777] ">Home</li>
-                    <li>Technologies</li>
-                    <li>Projects</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li className="text-[#DB2777] "><a href="#">Home</a></li>
+                    <li><a href="#">Technologies</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
                 <div className='flex gap-3 items-center'>
                     <button className="btn btn-ghost">Sign In</button>
