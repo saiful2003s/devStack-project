@@ -37,7 +37,7 @@ const Stack = ({ stack, handleRemoveItem, handleRemoveAll }: stackProps) => {
                         </p>
                         {stack.map((technology) => (
 
-                            <div className="card bg-base-100 card-xs shadow-sm mb-2">
+                            <div className="card bg-base-100 card-xs shadow-sm mb-2" key={technology.id}>
                                 <div className="flex justify-between p-2 items-center">
                                     <div key={technology.id} className="flex gap-2">
                                         <img src={technology.icon} alt={technology.name} className="w-10" />
