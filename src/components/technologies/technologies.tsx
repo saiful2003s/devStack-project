@@ -1,6 +1,7 @@
-import { use } from 'react';
+import { use, useState } from 'react';
 import type { Itechnology } from '../../types/technologyType';
 import AllTechnologies from './allTechnologies';
+import Stack from './stack';
 
 
 interface TechnologiesProps {
@@ -9,8 +10,14 @@ interface TechnologiesProps {
 
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
     const technologies = use(technologiesPromise)
-    console.log(technologies);
+    // console.log(technologies);
 
+    const [stack, setStack ] = useState<Itechnology[]>([])
+
+    const addToStack = (technology: Itechnology) => {
+        setStack([...stack, technology])
+
+    }
 
 
     return (
@@ -23,11 +30,19 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
                     <p className='text-[#64748B] text-[16px] leading-6 mb-6 mt-2'>Pick one technology per category to build your ideal stack.</p>
                 </div>
 
-                <div>
-                    <AllTechnologies technologies={technologies} />
+                <div className='grid grid-cols-4 gap-5'>
+                    <div className='col-span-3'>
+                        <AllTechnologies technologies={technologies} addToStack={addToStack} stack={stack} />
+
+                    </div>
+                    <div>
+                        <Stack stack={stack} />
+                    </div>
                 </div>
+
+
                 <div>
-                    
+
                 </div>
             </div>
 

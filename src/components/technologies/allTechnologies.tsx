@@ -1,6 +1,7 @@
 // import React from 'react';
 import { FaStar } from "react-icons/fa";
 import type { Itechnology } from '../../types/technologyType';
+import Stack from "./stack";
 
 const badgeColors: Record<string, string> = {
     Popular: "bg-purple-100 text-purple-600",
@@ -15,17 +16,24 @@ const badgeColors: Record<string, string> = {
 
 interface AllTechnologiesProps {
     technologies: Itechnology[];
+    addToStack: (technology: Itechnology) => void;
+    stack: Itechnology[];
 }
 
-const AllTechnologies = ({ technologies }: AllTechnologiesProps) => {
-    console.log(technologies, 'technologies from all technologies');
+
+
+const AllTechnologies = ({ technologies, addToStack, stack }: AllTechnologiesProps) => {
+    // console.log(technologies, 'technologies from all technologies');
     return (
         <div className='grid grid-cols-3 gap-4'>
             {
                 technologies.map((technology) => {
-                    return (
 
-                        < div className="card w-96 bg-base-100 shadow-sm" >
+                    const isAdded = stack.some(
+                        (item) => item.id === technology.id
+                    )
+                    return (
+                        < div key={technology.id} className="card  bg-base-100 shadow-sm" >
                             <div className="card-body">
                                 <div className="flex justify-between">
                                     <img src={technology.icon} alt="" className='w-10' />
@@ -45,7 +53,9 @@ const AllTechnologies = ({ technologies }: AllTechnologiesProps) => {
 
 
                                 <div className="mt-6">
-                                    <button className="btn bg-[#0A0F1D] text-[#FFFFFF] btn-block rounded-md">Add to Stack</button>
+                                    <button onClick={() => addToStack(technology)}
+                                        disabled={isAdded}
+                                        className= {`btn ${isAdded ? 'bg-[#f1f5f9c1] text-[#475569]' : 'bg-[#0A0F1D] text-[#FFFFFF]'}  btn-block rounded-md`} > {isAdded ? 'Added' : 'Add to Stack'}</button>
                                 </div>
                             </div>
                         </div>

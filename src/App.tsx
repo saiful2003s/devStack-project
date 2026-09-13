@@ -13,10 +13,12 @@ const technologiesFetch = async (): Promise<Itechnology[] > => {
   return data
 }
 
+  const technologiesPromise = technologiesFetch()
+
+
 
 function App() {
   // const [count, setCount] = useState(0)
-  const technologiesPromise = technologiesFetch()
 
   return (
     <>
