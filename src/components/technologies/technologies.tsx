@@ -33,7 +33,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 
     return (
 
-        <div className='mx-10 mt-20'>
+        <div className='mx-10 my-20'>
             <div className='container mx-auto '>
                 <div className='section-title'>
                     <h2 className='font-extrabold text-[36px] leading-10 tracking-[-0.9px] text-[#0F172A]'>Explore the

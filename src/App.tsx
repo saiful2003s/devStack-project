@@ -4,6 +4,7 @@ import Banner from "./components/banner"
 import Technologies from "./components/technologies/technologies"
 import { Suspense } from "react"
 import type { Itechnology } from "./types/technologyType"
+import Footer from "./components/footer"
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <Suspense fallback= { <h3>Loading...</h3>}>
         <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
+      <Footer/>
      
     </>
   )
