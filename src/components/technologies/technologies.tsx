@@ -84,3 +84,16 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 };
 
 export default Technologies;
+
+
+
+
+
+
+
+
+
+
+
+
+
