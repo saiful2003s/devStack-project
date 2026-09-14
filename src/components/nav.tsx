@@ -5,8 +5,8 @@ import hamburgur from '../assets/hamburger.png'
 const Nav = () => {
     return (
 
-        <div className=" bg-white md:px-7 px-3 my-4 shadow-sm rounded-md md:rounded-none">
-            <div className='container mx-auto sticky top-0 z-50 max-md:collapse'>
+        <div className=" sticky top-0 z-50 bg-white md:px-7 px-3 my-4 shadow-sm rounded-md md:rounded-none">
+            <div className='container mx-auto  max-md:collapse'>
                 <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
                 <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-md:peer-checked:block"></label>
                 <div className="collapse-title navbar">
